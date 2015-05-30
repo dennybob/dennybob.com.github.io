@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Main CSS
+   ========================================================================== */
+body {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+footer {
+	color: gray;
+	text-align: right;
+	font-size: 10px; 
+	}
+.jumbotron {
+	background-image: url("../img/metal_texture.jpg");
+	color: #EEE;
+	}
