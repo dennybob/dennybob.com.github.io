@@ -1,35 +1,48 @@
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
+@charset "UTF-8";
+
+body {
+  background-color: #D6D6D6;
+  font-family: Georgia, serif;
 }
 
-.nav li {
-  display: inline;
+.field {
+  background-color: #E6E6E6;
+  width: 94.%;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 1.25em;
 }
 
-.jumbotron {
-  background-image:url(http://everythingdifferent.co.uk/wp-content/uploads/2013/07/Tardis-JPEG.jpg);
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
+h3 {
+  margin: 2px;
 }
 
-.jumbotron .container {
-  position: relative;
-  top: 15px;
+p {
+  margin: 2px;
 }
 
-.jumbotron h1 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
+input {
+  width: 50%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.0em;
+  margin: 2px;
 }
 
-.jumbotron p {
-  font-size: 20px;
-  color: #bdbdbd;
+button {
+  background-color: green;
+  border: solid black 1px;
+  border-radius: 15px;
+  height: 30px;
+  font-family: Georgia, serif;
+  font-size: 1.0em;
+  color: white;
+  margin: 2px;
 }
