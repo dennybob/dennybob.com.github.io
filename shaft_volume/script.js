@@ -3,7 +3,7 @@ function fix(fNumber,fPlace){
   return Math.round(fNumber*fDecimal)/fDecimal;
   }
 
-function shaftVolumeWeight() {
+function shaftVolume() {
   var diameter = Number(document.getElementById("diameter").value);
   var radius = diameter/2;
   var length = Number(document.getElementById("length").value);
