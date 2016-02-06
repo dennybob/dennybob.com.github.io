@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<title>Volume & Weight</title>
+	<link rel="stylesheet" href="../main.css" />
+	<script src="common.js"></script>
+	<script src="volume_weight.js"></script>
+</head>
+<body>
+	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+	<h1>Volume & Weight</h1>
+	<div class="field">
+		<h3>Input</h3>
+		<p>Shaft Diameter:</p>
+		<input oninput="volumeWeight()" id="diameter" type="number">inches</input>
+		<p>Shaft Length:</p>
+		<input oninput="volumeWeight()" id="length" type="number">inches</input>
+		<p>Material Type:</p>
+		<select id="material" onchange="volumeWeight()">
+			<option value="steel">Steel</option>
+			<option value="aluminum">Aluminum</option>
+			<option value="titanium">Titanium</option>
+			<option value="brass">Brass</option>
+		</select>
+	</div>
+	<div class="field">
+		<h3>Output</h3>
+		<p>Volume:</p>
+		<input readonly id="volume">cubic inches</input>
+		<p>Weight:</p>
+		<input readonly id="weight">pounds</input>
+	</div>
+</body>
+</html>
