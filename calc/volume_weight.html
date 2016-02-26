@@ -13,12 +13,22 @@
 	<h1>Volume & Weight</h1>
 	<div class="field">
 		<h3>Input</h3>
-		<p>Shaft Diameter:</p>
-		<input oninput="volumeWeight()" id="diameter" type="number">inches</input>
-		<p>Shaft Length:</p>
-		<input oninput="volumeWeight()" id="length" type="number">inches</input>
+		<select id="selectShape" onchange="volumeWeight()">
+			<option value="rectangle">Rectangle</option>
+			<option value="square">Square</option>
+			<option value="round">Round</option>
+		</select>
+		<p id="labelWidth">Width:</p>
+			<input oninput="volumeWeight()" id="inputWidth" type="number"></input>
+			<span id="unitWidth">inches</span>
+		<p id="labelHeight">Height:</p>
+			<input oninput="volumeWeight()" id="inputHeight" type="number"></input>
+			<span id="unitHeight">inches</span>
+		<p id="labelLength">Length:</p>
+			<input oninput="volumeWeight()" id="inputLength" type="number"></input>
+			<span id="unitLength">inches</span>
 		<p>Material Type:</p>
-		<select id="material" onchange="volumeWeight()">
+		<select id="selectMaterial" onchange="volumeWeight()">
 			<option value="steel">Steel</option>
 			<option value="aluminum">Aluminum</option>
 			<option value="titanium">Titanium</option>
@@ -28,9 +38,11 @@
 	<div class="field">
 		<h3>Output</h3>
 		<p>Volume:</p>
-		<input readonly id="volume">cubic inches</input>
+			<input readonly id="inputVolume"></input>
+			<span>cubic inches</span>
 		<p>Weight:</p>
-		<input readonly id="weight">pounds</input>
+			<input readonly id="inputWeight"></input>
+			<span>pounds</span>
 	</div>
 </body>
 </html>
