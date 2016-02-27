@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<title>Chord Height</title>
+	<link rel="stylesheet" href="../main.css" />
+	<script src="common.js"></script>
+	<script src="chord_height.js"></script>
+</head>
+<body>
+	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+	<h1>Chord Height</h1>
+	<div class="field">
+		<h3>Input</h3>
+		<p id="labelDiameter">Diameter:</p>
+			<input oninput="chordHeight()" id="inputDiameter" type="number"></input>
+			<span>inches</span>
+		<p id="labelHeight">Chord Width:</p>
+			<input oninput="chordHeight()" id="inputWidth" type="number"></input>
+			<span>inches</span>
+	</div>
+	<div class="field">
+		<h3>Output</h3>
+		<p>Chord Height:</p>
+			<input readonly id="inputHeight"></input>
+			<span>inches</span>
+	</div>
+</body>
+</html>
