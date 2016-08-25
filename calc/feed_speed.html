@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<title>Feed and Speed</title>
+	<link rel="stylesheet" href="../main.css" />
+	<script src="common.js"></script>
+	<script src="feed_speed.js"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+	<h1>Feed and Speed</h1>
+	<div class="field">
+		<h3>Tool Data</h3>
+		<p>Diameter:<p>
+			<input oninput="feedSpeed()" id="inputDiameter" type="number"></input>
+			<span>inches</span>
+		<p>Flutes:</p>
+			<input oninput="feedSpeed()" id="inputFlutes" type="number"></input>
+			<span>qty</span>
+	</div>
+	<div class="field">
+		<h3>Rates</h3>
+		<p>Surface Speed:<p>
+			<input oninput="feedSpeed()" id="fpm" type="number"></input>
+			<span>feet/min</span>
+		<p>Spindle Speed:<p>
+			<input oninput="feedSpeed()" id="rpm" type="number"></input>
+			<span>RPM</span>
+		<p>Chip Load:<p>
+			<input oninput="feedSpeed()" id="ipf" type="number"></input>
+			<span>inches/flute</span>
+		<p>Feed Rate:<p>
+			<input oninput="feedSpeed()" id="ipm" type="number"></input>
+			<span>inches/min</span>
+	</div>
+</body>
+</html>
