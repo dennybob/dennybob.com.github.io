@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 body {
   background-color: #D6D6D6;
@@ -39,6 +39,13 @@ p {
 }
 
 input {
+  width: 50%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.0em;
+  margin: 2px;
+}
+
+textarea {
   width: 50%;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.0em;

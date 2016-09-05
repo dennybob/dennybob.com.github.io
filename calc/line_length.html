@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <title>Line Length</title>
+    <link rel="stylesheet" href="../main.css" />
+    <script src="common.js"></script>
+    <script src="line_length.js"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+    <a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+    <h1>Line Length</h1>
+    <div class="field">
+        <h3>Input Point-1</h3><span></span>
+            <p>X<sub>1</sub>:<input oninput="lineLength()" id="X1" type="number"></input><span>inches</span></p>
+            <p>Y<sub>1</sub>:<input oninput="lineLength()" id="Y1" type="number"></input><span>inches</span></p>
+            <p>Z<sub>1</sub>:<input oninput="lineLength()" id="Z1" type="number"></input><span>inches</span></p>
+        <h3>Input Point-2</h3><span></span>
+            <p>X<sub>2</sub>:<input oninput="lineLength()" id="X2" type="number"></input><span>inches</span></p>
+            <p>Y<sub>2</sub>:<input oninput="lineLength()" id="Y2" type="number"></input><span>inches</span></p>
+            <p>Z<sub>2</sub>:<input oninput="lineLength()" id="Z2" type="number"></input><span>inches</span></p>
+    </div>
+    <div class="field">
+        <h3>Output</h3>
+        <p>Line Length:<span class="note">(3d line length in Euclidean Space)</span></p>
+        <input readonly id="inputLength"></input>
+        <span>inches</span>
+    </div>
+</body>
+</html>
