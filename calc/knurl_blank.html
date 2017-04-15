@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Calculators">
+    <meta name="keywords" content="DennyBob, Calculators, Math, Science, Physics, Engineering, Machining, Music">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<title>Knurl Blanking</title>
+	<link rel="stylesheet" href="../main.css" />
+	<script src="common.js"></script>
+	<script src="knurl_blank.js"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+	<h1>Knurl Blanking</h1>
+	<div class="field">
+		<h3>Input</h3>
+		<p>Pitch:<span class="note">(pitch of teeth on knurling wheel)</span></p>
+			<input oninput="knurl()" id="tpi" type="number"></input>
+			<span>TPI</span>
+		<p>Angle:<span class="note">(diamond=30, straight=0 )</span></p>
+			<input oninput="knurl()" id="angle" type="number"></input>
+			<span>degrees</span>
+		<p>Maximum Diameter:<span class="note">(maximum allowable journal diameter)</span></p>
+			<input oninput="knurl()" id="max_dia" type="number"></input>
+			<span>inches</span>
+	</div>
+	<div class="field">
+		<h3>Output</h3>
+		<p>Blanking Diameter:<span class="note">(turn blank to this diameter)</span></p>
+			<input readonly id="blank"></input>
+			<span>inches</span>
+		<p>Number of Teeth:<span class="note">(resulting serrations on workpiece)</span></p>
+			<input readonly id="teeth"></input>
+	</div>
+</body>
+</html>

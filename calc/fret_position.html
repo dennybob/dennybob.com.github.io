@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Calculators">
+    <meta name="keywords" content="DennyBob, Calculators, Math, Science, Physics, Engineering, Machining, Music">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <title>Fret Position</title>
+    <link rel="stylesheet" href="../main.css" />
+    <script src="common.js"></script>
+    <script src="fret_position.js"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+    <a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+    <h1>Fret Position</h1>
+    <div class="field">
+        <h3>Input</h3>
+        <p>Scale Length:</p>
+        <input oninput="calc()" id="scale" type="number"></input>
+        <span>inches</span>
+        <p>Number of Frets:</p>
+        <input oninput="calc()" id="frets" type="number"></input>
+        <span>qty</span>
+    </div>
+    <div class="field">
+        <h3>Output</h3>
+        <p>Measurements from Nut:</p>
+        <textarea readonly id="output"></textarea>
+    </div>
+</body>
+</html>
