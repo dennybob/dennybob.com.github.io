@@ -5,6 +5,17 @@ body {
   font-family: Georgia, serif;
 }
 
+footer {
+  position: fixed;
+  margin: 7px;
+  left: 1px;
+  bottom: 1px;
+  width: 100%;
+  background-color: #D6D6D6;
+  color: grey;
+  text-align: left;
+}
+
 .field {
   background-color: #E6E6E6;
   width: 92%;
