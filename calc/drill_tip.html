@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Calculators">
+    <meta name="keywords" content="DennyBob, Calculators, Math, Science, Physics, Engineering, Machining, Music">
+	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<title>Volume & Weight</title>
+	<link rel="stylesheet" href="../main.css" />
+	<script src="common.js"></script>
+	<script src="drill_tip.js"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
+	<h1>Drill Point Length</h1>
+	<div class="field">
+		<h3>Input</h3>
+		<p id="labelAngle">Included Angle:</p>
+		<select id="selectAngle" onchange="tipLength()">
+			<option value="60.0">60 Deg.</option>
+			<option value="82.0">82 Deg.</option>
+			<option value="90.0">90 Deg.</option>
+			<option value="118.0">118 Deg.</option>
+			<option value="132.0">132 Deg.</option>
+			<option value="135.0">135 Deg.</option>
+			<option value="144.0">144 Deg.</option>
+		</select>
+		<p id="labelDiameter">Width:</p>
+			<input oninput="tipLength()" id="inputDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+	</div>
+	<div class="field">
+		<h3>Output</h3>
+		<p>Length:</p>
+			<input readonly id="inputLength"></input>
+			<span>inches</span>
+	</div>
+</body>
+<footer>
+	<p>dennybob.com</p>
+</footer>
+</html>
