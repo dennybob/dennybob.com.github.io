@@ -1,19 +1,85 @@
 ﻿<!doctype html>
 <html>
 <head>
+	<!-- METADATA -->
 	<meta charset="UTF-8">
 	<meta name="description" content="Calculators">
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+	<!-- PAGE TITLE -->
 	<title>Knurl Blanking | dennybob.com</title>
+    <!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+	<link rel="manifest" href="../favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- BOOTSTRAP FROM CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
 	<script src="common.js"></script>
 	<script src="knurl_blank.js"></script>
+	<!-- GOOGLE ANALYITICS -->
     <script src="../analytics.js"></script>
 </head>
 <body>
-	<a href="../index.html"><img border="0" alt="Back" src="../images/arrow-back-256x256.png" width="40" height="40"></a>
-	<h1>Knurl Blanking</h1>
+	<!-- BOOTSTRAP NAVBAR -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="../index.html">DennyBob</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="javascript:location.reload();">Knurl Blank <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Calculators
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="../calc/volume_weight.html">Material Volume & Weight</a>
+						<a class="dropdown-item" href="../calc/chord_height.html">Chord Height</a>
+						<a class="dropdown-item" href="../calc/helix_length.html">Helix Length</a>
+						<a class="dropdown-item" href="../calc/line_length.html">Line Length</a>
+						<a class="dropdown-item" href="../calc/feed_speed.html">Feed and Speed</a>
+						<a class="dropdown-item" href="../calc/bolt_circle.html">Bolt Circle</a>
+						<a class="dropdown-item" href="../calc/drill_tip.html">Drill Tip Length</a>
+						<a class="dropdown-item disabled" href="../calc/knurl_blank.html">Knurl Blank</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Tables
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Daewoo</a>
+						<a class="dropdown-item" href="#">Kasuga</a>
+						<a class="dropdown-item" href="#">Mori</a>
+						<a class="dropdown-item" href="#">Doosan</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
 		<p>Pitch:<span class="note">(pitch of teeth on knurling wheel)</span></p>
