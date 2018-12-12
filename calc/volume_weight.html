@@ -58,6 +58,7 @@
 						<a class="dropdown-item" href="../calc/helix_length.html">Helix Length</a>
 						<a class="dropdown-item" href="../calc/line_length.html">Line Length</a>
 						<a class="dropdown-item" href="../calc/feed_speed.html">Feed and Speed</a>
+						<a class="dropdown-item" href="../calc/circinterp_feed.html">Circular Interp. Feedrate</a>
 						<a class="dropdown-item" href="../calc/bolt_circle.html">Bolt Circle</a>
 						<a class="dropdown-item" href="../calc/drill_tip.html">Drill Tip Length</a>
 						<a class="dropdown-item" href="../calc/knurl_blank.html">Knurl Blank</a>
@@ -80,10 +81,11 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
+		<p id="labelShape">Solid Shape:</p>
 		<select id="selectShape" onchange="volumeWeight()">
 			<option value="rectangle">Rectangle</option>
 			<option value="square">Square</option>
-			<option value="round">Round</option>
+			<option value="round">Round (shaft)</option>
 		</select>
 		<p id="labelWidth">Width:</p>
 			<input oninput="volumeWeight()" id="inputWidth" type="number"></input>

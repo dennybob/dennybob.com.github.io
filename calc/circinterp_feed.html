@@ -7,7 +7,7 @@
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Volume & Weight | dennybob.com</title>
+	<title>Circular Interp. Feedrate | dennybob.com</title>
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -34,7 +34,7 @@
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
 	<script src="common.js"></script>
-	<script src="drill_tip.js"></script>
+	<script src="circinterp_feed.js"></script>
 	<!-- GOOGLE ANALYITICS -->
     <script src="../analytics.js"></script>
 </head>
@@ -42,7 +42,7 @@
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="../index.html">DennyBob</a>
-		<a class="navbar-brand" href="javascript:location.reload();">Drill Tip Length</a>
+		<a class="navbar-brand" href="javascript:location.reload();">Circ. Interp. Feed</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -58,9 +58,9 @@
 						<a class="dropdown-item" href="../calc/helix_length.html">Helix Length</a>
 						<a class="dropdown-item" href="../calc/line_length.html">Line Length</a>
 						<a class="dropdown-item" href="../calc/feed_speed.html">Feed and Speed</a>
-						<a class="dropdown-item" href="../calc/circinterp_feed.html">Circular Interp. Feedrate</a>
+						<a class="dropdown-item disabled" href="../calc/circinterp_feed.html">Circular Interp. Feedrate</a>
 						<a class="dropdown-item" href="../calc/bolt_circle.html">Bolt Circle</a>
-						<a class="dropdown-item disabled" href="../calc/drill_tip.html">Drill Tip Length</a>
+						<a class="dropdown-item" href="../calc/drill_tip.html">Drill Tip Length</a>
 						<a class="dropdown-item" href="../calc/knurl_blank.html">Knurl Blank</a>
 					</div>
 				</li>
@@ -81,25 +81,26 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
-		<p id="labelAngle">Included Angle:</p>
-		<select id="selectAngle" onchange="tipLength()">
-			<option value="60.0">60 Deg.</option>
-			<option value="82.0">82 Deg.</option>
-			<option value="90.0">90 Deg.</option>
-			<option value="118.0" selected="selected">118 Deg.</option>
-			<option value="132.0">132 Deg.</option>
-			<option value="135.0">135 Deg.</option>
-			<option value="144.0">144 Deg.</option>
+		<p id="labelOpType">Operation Type:</p>
+		<select id="selectOpType" onchange="circFeed()">
+			<option value="internal" selected="selected">Internal (bore)</option>
+			<option value="external">External (boss)</option>
 		</select>
-		<p id="labelDiameter">Drill Diameter:</p>
-			<input oninput="tipLength()" id="inputDiameter" type="number"></input>
+		<p id="labelWorkDiameter">Workpiece Diameter:</p>
+			<input oninput="circFeed()" id="inputWorkDiameter" type="number"></input>
 			<span id="unitDiameter">inches</span>
+		<p id="labelToolDiameter">Tool Diameter:</p>
+			<input oninput="circFeed()" id="inputToolDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+		<p id="labelLinearFeedrate">Linear Feedrate:</p>
+			<input oninput="circFeed()" id="inputLinearFeed" type="number"></input>
+			<span id="unitDiameter">IPM</span>
 	</div>
 	<div class="field">
 		<h3>Output</h3>
-		<p>Length:</p>
-			<input readonly id="inputLength"></input>
-			<span>inches</span>
+		<p>Interp. Feedrate:</p>
+			<input readonly id="circFeed"></input>
+			<span>IPM</span>
 	</div>
 </body>
 </html>
