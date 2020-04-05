@@ -53,24 +53,186 @@
 		</div>
 	</nav>
 	<!-- PAGE CONTENT -->
-	<div class="field">
-		<h3>Welcome</h3><br>
-		<p>Thank you for visiting DennyBob. Use the hamburger menu to select a machining calculator.</p><br>
-		<p>I created this site to give my machinist colleagues a resource to make calculations
-			that I frequently help them with. The site has also served as a means for me to 
-			teach myself web programming. The site is intentionally made to be somewhat lightweight
-			so that pages will still load fast inside metal buildings. Additionally, the 
-			calculations are made on the user's device using JavaScript rather than on a server.
-			To use a calculator, type the desired numbers into all input fields and the output
-			will be automatically calculated as you type.
-		</p><br>
-	</div>
-	<div class="field">
-		<h3>Disclaimer</h3><br>
-		<p>Use at your own risk!</p><br>
-		<p>The information contained here within may contain errors.  DennyBob.com and/or any of it's affiliates
-			will not be held liable for any loss or damage concerning the use of this site.
-		</p>
+	<div class="field" id="mainField">
+		<!-- MATERIAL WEIGHT -->
+		<a class="button-container" href="./calc/material_weight.html">
+			<button class="svgbutton">
+	 			<svg viewBox="-50 -50 100 100">
+	 				<rect height="60" width="20" fill-opacity="0" stroke="white" stroke-width="1" transform="translate(-10 -30)" />
+					<rect height="25" width="25" fill-opacity="0" stroke="white" stroke-width="1" transform="translate(-40 5)" />
+					<circle cx="30" cy="15" r="15" fill-opacity="0" stroke="white" stroke-width="1" />
+				</svg>
+			</button>
+			<p class="svgtext">Material Weight</p>
+		</a>
+		<!-- DRILL TIP -->
+		<a class="button-container" href="./calc/drill_tip.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<line x1="-20" y1="-40" x2="-20" y2="30" stroke="white" />
+					<line x1="20" y1="-40" x2="20" y2="30" stroke="white" />
+					<line x1="0" y1="40" x2="20" y2="30" stroke="white" />
+					<line x1="0" y1="40" x2="-20" y2="30" stroke="white" />
+					<path fill="none" stroke="white" d="M -20,-40 q 10,-5 20,0 t 20,0" />
+					<line x1="-20" y1="30" x2="20" y2="30" stroke="white" stroke-dasharray="3 3" stroke-dashoffset="3" />
+				</svg>
+			</button>
+			<p class="svgtext">Drill Tip</p>
+		</a>
+		<!-- CHORD HEIGHT -->
+		<a class="button-container" href="./calc/chord_height.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<circle cx="0" cy="0" r="30" fill-opacity="0" stroke="white" stroke-width="1" />
+					<line x1="-21.21" y1="-21.21" x2="21.21" y2="-21.21" stroke="white" stroke-dasharray="3 3" stroke-dashoffset="1.5" />
+					<circle cx="-21.21" cy="-21.21" r="2" fill="white"/>
+					<circle cx="21.21" cy="-21.21" r="2" fill="white"/>
+				</svg>
+			</button>
+			<p class="svgtext">Chord Height</p>
+		</a>
+		<!-- BOLT CIRCLE -->
+		<a class="button-container" href="./calc/bolt_circle.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<circle cx="0" cy="0" r="40" fill-opacity="0" stroke="white" stroke-width="1" />
+					<line x1="-4" y1="0" x2="4" y2="0" stroke="white" />
+					<line x1="0" y1="-4" x2="0" y2="4" stroke="white" />
+					<circle cx="40" cy="0" r="5" fill-opacity="1" fill="#343A40" stroke="white" stroke-width="1" transform="rotate(270)" />
+					<circle cx="40" cy="0" r="5" fill-opacity="1" fill="#343A40" stroke="white" stroke-width="1" transform="rotate(342)" />
+					<circle cx="40" cy="0" r="5" fill-opacity="1" fill="#343A40" stroke="white" stroke-width="1" transform="rotate(54)" />
+					<circle cx="40" cy="0" r="5" fill-opacity="1" fill="#343A40" stroke="white" stroke-width="1" transform="rotate(126)" />
+					<circle cx="40" cy="0" r="5" fill-opacity="1" fill="#343A40" stroke="white" stroke-width="1" transform="rotate(198)" />
+					<circle cx="40" cy="0" r="1" fill="white" transform="rotate(270)"/>
+					<circle cx="40" cy="0" r="1" fill="white" transform="rotate(342)"/>
+					<circle cx="40" cy="0" r="1" fill="white" transform="rotate(54)"/>
+					<circle cx="40" cy="0" r="1" fill="white" transform="rotate(126)"/>
+					<circle cx="40" cy="0" r="1" fill="white" transform="rotate(198)"/>
+				</svg>
+			</button>
+			<p class="svgtext">Bolt Circle</p>
+		</a>
+		<!-- ARC FEED -->
+		<a class="button-container" href="./calc/arc_feed.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<circle cx="0" cy="0" r="40" fill-opacity="0" stroke="white" stroke-width="1" />
+					<path fill="none" stroke="white" stroke-dasharray="3 5" stroke-dashoffset="-1" d="M 11.72,-27.62 A 30 30 0 1 0 27.62,-11.72" />
+					<circle cx="20.6" cy="-20.6" r="10" fill-opacity="0" stroke="white" stroke-width="0.7" />
+					<line x1="-4" y1="0" x2="4" y2="0" stroke="white" />
+					<line x1="0" y1="-4" x2="0" y2="4" stroke="white" />
+				</svg>
+			</button>
+			<p class="svgtext">Arc Feed</p>
+		</a>
+		<!-- 3-POINT CIRCLE -->
+		<a class="button-container" href="./calc/3point_circle.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<circle cx="0" cy="0" r="30" fill-opacity="0" stroke="white" stroke-width="1" />
+					<line x1="-4" y1="0" x2="4" y2="0" stroke="white" />
+					<line x1="0" y1="-4" x2="0" y2="4" stroke="white" />
+					<circle cx="28.98" cy="-7.76" r="2" fill="white"/>
+					<circle cx="-7.76" cy="-28.98" r="2" fill="white"/>
+					<circle cx="-15" cy="25.98" r="2" fill="white"/>
+				</svg>
+			</button>
+			<p class="svgtext">3-Point Circle</p>
+		</a>
+		<!-- LINE LENGTH -->
+		<a class="button-container" href="./calc/line_length.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<line x1="0" y1="0" x2="0" y2="-40" stroke="white" />
+					<path fill="white" stroke="white" stroke-linecap="round" d="M 0,-45 l -2,5 l 4,0 l -2,-5" />
+					<path fill="white" stroke="white" stroke-linecap="round" transform="rotate(100,0,0)" d="M 0,-45 l -2,5 l 4,0 l -2,-5" />
+					<path fill="white" stroke="white" stroke-linecap="round" transform="rotate(-135,0,0)" d="M 0,-45 l -2,5 l 4,0 l -2,-5" />
+					<line x1="0" y1="0" x2="39.39" y2="6.95" stroke="white" />
+					<line x1="0" y1="0" x2="-28.28" y2="28.28" stroke="white" />
+					<circle cx="-25" cy="-18" r="2" fill="white"/>
+					<circle cx="22" cy="24" r="2" fill="white"/>
+					<line x1="-25" y1="-18" x2="22" y2="24" stroke="white" stroke-dasharray="3 3" stroke-dashoffset="1.5" />
+				</svg>
+			</button>
+			<p class="svgtext">Line Length</p>
+		</a>
+		<!-- HELIX LENGTH -->
+		<a class="button-container" href="./calc/helix_length.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<line x1="-40" y1="-20" x2="-40" y2="20" stroke="white" />
+					<line x1="40" y1="-20" x2="40" y2="20" stroke="white" />
+					<path fill="none" stroke="white" d="M -40,-20 q 5,3 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0" />
+					<path fill="none" stroke="white" d="M -40,20 q 5,3 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0" />
+					<line x1="-40" y1="-20" x2="-30" y2="20" stroke="white" />
+					<line x1="-30" y1="-20" x2="-20" y2="20" stroke="white" />
+					<line x1="-20" y1="-20" x2="-10" y2="20" stroke="white" />
+					<line x1="-10" y1="-20" x2="0" y2="20" stroke="white" />
+					<line x1="0" y1="-20" x2="10" y2="20" stroke="white" />
+					<line x1="10" y1="-20" x2="20" y2="20" stroke="white" />
+					<line x1="20" y1="-20" x2="30" y2="20" stroke="white" />
+					<line x1="30" y1="-20" x2="40" y2="20" stroke="white" />
+				</svg>
+			</button>
+			<p class="svgtext">Helix Length</p>
+		</a>
+		<!-- FEED & SPEED -->
+		<a class="button-container" href="./calc/feed_speed.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<circle cx="10" cy="0" r="2" fill="white"/>
+					<path fill="none" stroke="white" d="M 30,0 A 20 20 0 0 0 7.5,-17 " />
+					<path fill="none" stroke="white" transform="rotate(90,10,0)" d="M 30,0 A 20 20 0 0 0 7.5,-17 " />
+					<path fill="none" stroke="white" transform="rotate(180,10,0)" d="M 30,0 A 20 20 0 0 0 7.5,-17 " />
+					<path fill="none" stroke="white" transform="rotate(270,10,0)" d="M 30,0 A 20 20 0 0 0 7.5,-17 " />
+					<path fill="none" stroke="white" transform="rotate(0,10,0)" d="M 10,0 q 12,-8 20,0 " />
+					<path fill="none" stroke="white" transform="rotate(90,10,0)" d="M 10,0 q 12,-8 20,0 " />
+					<path fill="none" stroke="white" transform="rotate(180,10,0)" d="M 10,0 q 12,-8 20,0 " />
+					<path fill="none" stroke="white" transform="rotate(270,10,0)" d="M 10,0 q 12,-8 20,0 " />
+					<line x1="-30" y1="0" x2="-15" y2="0" stroke="white" />
+					<path fill="white" stroke="white" stroke-linecap="round" d="M -35,0 l 5,2 l 0,-4 l -5,2" />
+					<path fill="none" stroke="white" d="M 35.98,-15 A 30 30 0 0 1 40,0" />
+					<path fill="none" stroke="white" transform="rotate(90,10,0)" d="M 35.98,-15 A 30 30 0 0 1 40,0" />
+					<path fill="none" stroke="white" transform="rotate(-90,10,0)" d="M 35.98,-15 A 30 30 0 0 1 40,0" />
+					<path fill="white" stroke="white" stroke-linecap="round" d="M 40,5 l 2,-5 l -4,0 l 2,5" />
+					<path fill="white" stroke="white" stroke-linecap="round" transform="rotate(90,10,0)" d="M 40,5 l 2,-5 l -4,0 l 2,5" />
+					<path fill="white" stroke="white" stroke-linecap="round"  transform="rotate(-90,10,0)" d="M 40,5 l 2,-5 l -4,0 l 2,5" />
+				</svg>
+			</button>
+			<p class="svgtext">Feed & Speed</p>
+		</a>
+		<!-- KNURL BLANK -->
+		<a class="button-container" href="./calc/knurl_blank.html">
+			<button class="svgbutton">
+				<svg viewBox="-50 -50 100 100">
+					<path fill="none" stroke="white" d="M -35,-30 l 0,60 l 20,0 l 0,-10 l 50,0 l 0,-40 l -50,0 l 0,-10 l -20,0 "/>
+					<line x1="-15" y1="20" x2="-15" y2="-20" stroke="white" />
+					<line x1="-10" y1="20" x2="-15" y2="0" stroke="white" />
+					<line x1="-5" y1="20" x2="-15" y2="-20" stroke="white" />
+					<line x1="0" y1="20" x2="-10" y2="-20" stroke="white" />
+					<line x1="5" y1="20" x2="-5" y2="-20" stroke="white" />
+					<line x1="10" y1="20" x2="0" y2="-20" stroke="white" />
+					<line x1="15" y1="20" x2="5" y2="-20" stroke="white" />
+					<line x1="20" y1="20" x2="10" y2="-20" stroke="white" />
+					<line x1="25" y1="20" x2="15" y2="-20" stroke="white" />
+					<line x1="30" y1="20" x2="20" y2="-20" stroke="white" />
+					<line x1="35" y1="20" x2="25" y2="-20" stroke="white" />
+					<line x1="35" y1="0" x2="30" y2="-20" stroke="white" />
+					<line x1="-10" y1="20" x2="-15" y2="0" stroke="white" transform="rotate(207.5,-15,0)" />
+					<line x1="-5" y1="20" x2="-15" y2="-20" stroke="white" transform="rotate(207.5,-10,0)" />
+					<line x1="0" y1="20" x2="-10" y2="-20" stroke="white" transform="rotate(207.5,-5,0)" />
+					<line x1="5" y1="20" x2="-5" y2="-20" stroke="white" transform="rotate(207.5,0,0)" />
+					<line x1="10" y1="20" x2="0" y2="-20" stroke="white" transform="rotate(207.5,5,0)" />
+					<line x1="15" y1="20" x2="5" y2="-20" stroke="white" transform="rotate(207.5,10,0)" />
+					<line x1="20" y1="20" x2="10" y2="-20" stroke="white" transform="rotate(207.5,15,0)" />
+					<line x1="25" y1="20" x2="15" y2="-20" stroke="white" transform="rotate(207.5,20,0)" />
+					<line x1="30" y1="20" x2="20" y2="-20" stroke="white" transform="rotate(207.5,25,0)" />
+					<line x1="35" y1="20" x2="25" y2="-20" stroke="white" transform="rotate(207.5,30,0)" />
+					<line x1="35" y1="0" x2="30" y2="-20" stroke="white" transform="rotate(207.5,35,0)" />
+				</svg>
+			</button>
+			<p class="svgtext">Knurl Blank</p>
+		</a>
 	</div>
 </body>
 </html>
