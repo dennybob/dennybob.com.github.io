@@ -83,3 +83,8 @@ a.button-container:hover {
 #mainField {
   text-align: center;
 }
+
+#disclaimerWarning {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
