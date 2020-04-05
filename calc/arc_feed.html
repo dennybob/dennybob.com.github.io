@@ -7,8 +7,8 @@
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Volume & Weight | dennybob.com</title>
-    <!-- ICONS -->
+	<title>Arc Feed | dennybob.com</title>
+	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
@@ -34,7 +34,7 @@
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
 	<script src="common.js"></script>
-	<script src="volume_weight.js"></script>
+	<script src="arc_feed.js"></script>
 	<!-- GOOGLE ANALYITICS -->
     <script src="../analytics.js"></script>
 </head>
@@ -42,22 +42,23 @@
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
 			<a class="navbar-brand mb-0 h1" href="https://dennybob.com">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Materials</a>
+			<a class="navbar-brand" href="javascript:location.reload();">Arc Feed</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="../calc/volume_weight.html">Material Volume & Weight</a>
-						<a class="nav-link" href="../calc/chord_height.html">Chord Height</a>
-						<a class="nav-link" href="../calc/helix_length.html">Helix Length</a>
-						<a class="nav-link" href="../calc/line_length.html">Line Length</a>
-						<a class="nav-link" href="../calc/feed_speed.html">Feed and Speed</a>
-						<a class="nav-link" href="../calc/circinterp_feed.html">Circular Interp. Feedrate</a>
-						<a class="nav-link" href="../calc/bolt_circle.html">Bolt Circle</a>
-						<a class="nav-link" href="../calc/drill_tip.html">Drill Tip Length</a>
-						<a class="nav-link" href="../calc/knurl_blank.html">Knurl Blank</a>
+                        <a class="nav-link" href="./calc/material_weight.html">Material Weight</a>
+                        <a class="nav-link" href="./calc/drill_tip.html">Drill Tip</a>
+                        <a class="nav-link" href="./calc/chord_height.html">Chord Height</a>
+                        <a class="nav-link" href="./calc/bolt_circle.html">Bolt Circle</a>
+                        <a class="nav-link" href="./calc/arc_feed.html">Arc Feed</a>
+                        <a class="nav-link" href="./calc/3point_circle.html">3-Point Circle</a>
+                        <a class="nav-link" href="./calc/line_length.html">Line Length</a>
+                        <a class="nav-link" href="./calc/helix_length.html">Helix Length</a>
+                        <a class="nav-link" href="./calc/feed_speed.html">Feed & Speed</a>
+                        <a class="nav-link" href="./calc/knurl_blank.html">Knurl Blank</a>
 					</li>
 				</ul>
 			</div>
@@ -65,37 +66,26 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
-		<p id="labelShape">Solid Shape:</p>
-		<select id="selectShape" onchange="volumeWeight()">
-			<option value="rectangle">Rectangle</option>
-			<option value="square">Square</option>
-			<option value="round">Round (shaft)</option>
+		<p id="labelOpType">Operation Type:</p>
+		<select id="selectOpType" onchange="circFeed()">
+			<option value="internal" selected="selected">Internal (bore)</option>
+			<option value="external">External (boss)</option>
 		</select>
-		<p id="labelWidth">Width:</p>
-			<input oninput="volumeWeight()" id="inputWidth" type="number"></input>
-			<span id="unitWidth">inches</span>
-		<p id="labelHeight">Height:</p>
-			<input oninput="volumeWeight()" id="inputHeight" type="number"></input>
-			<span id="unitHeight">inches</span>
-		<p id="labelLength">Length:</p>
-			<input oninput="volumeWeight()" id="inputLength" type="number"></input>
-			<span id="unitLength">inches</span>
-		<p>Material Type:</p>
-		<select id="selectMaterial" onchange="volumeWeight()">
-			<option value="steel">Steel</option>
-			<option value="aluminum">Aluminum</option>
-			<option value="titanium">Titanium</option>
-			<option value="brass">Brass</option>
-		</select>
+		<p id="labelWorkDiameter">Workpiece Diameter:</p>
+			<input oninput="circFeed()" id="inputWorkDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+		<p id="labelToolDiameter">Tool Diameter:</p>
+			<input oninput="circFeed()" id="inputToolDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+		<p id="labelLinearFeedrate">Linear Feedrate:</p>
+			<input oninput="circFeed()" id="inputLinearFeed" type="number"></input>
+			<span id="unitDiameter">IPM</span>
 	</div>
 	<div class="field">
 		<h3>Output</h3>
-		<p>Volume:</p>
-			<input readonly id="inputVolume"></input>
-			<span>cubic inches</span>
-		<p>Weight:</p>
-			<input readonly id="inputWeight"></input>
-			<span>pounds</span>
+		<p>Interp. Feedrate:</p>
+			<input readonly id="circFeed"></input>
+			<span>IPM</span>
 	</div>
 </body>
 </html>
