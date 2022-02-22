@@ -1,13 +1,13 @@
 ﻿<!doctype html>
 <html>
 <head>
-	<!-- METADATA -->
-	<meta charset="UTF-8">
+  	<!-- METADATA -->
+    <meta charset="UTF-8">
 	<meta name="description" content="Calculators">
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Knurl Blank | dennybob.com</title>
+    <title>Acme Thread | dennybob.com</title>
     <!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -31,51 +31,52 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<!-- LOCAL SCRIPTS/STYLESHEETS -->
-	<link rel="stylesheet" href="../main.css" />
-	<script src="common.js"></script>
-	<script src="knurl_blank.js"></script>
-	<!-- GOOGLE ANALYITICS -->
+    <!-- LOCAL SCRIPTS/STYLESHEETS -->
+    <link rel="stylesheet" href="../main.css" />
+    <script src="common.js"></script>
+    <script src="acme_thread.js"></script>
+    <!-- GOOGLE ANALYITICS -->
     <script src="../analytics.js"></script>
 </head>
 <body>
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mb-0 h1" href="https://dennybob.com">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Knurl Blank</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-                        <a class="nav-link" href="../calc/knurl_blank.html">Clear All</a>
+            <a class="navbar-brand mb-0 h1" href="https://dennybob.com">DennyBob</a>
+            <a class="navbar-brand" href="javascript:location.reload();">Acme Thread</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../calc/acme_thread.html">Clear All</a>
                         <a class="nav-link" href="../index.html">Home</a>
                         <a class="nav-link" href="../about.html">About</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	<!-- PAGE CONTENT -->
-	<div class="field">
-		<h3>Input</h3>
-		<p>Pitch:<span class="note">(pitch of teeth on knurling wheel)</span></p>
-			<input oninput="knurl()" id="tpi" type="number"></input>
-			<span>TPI</span>
-		<p>Angle:<span class="note">(diamond=30, straight=0 )</span></p>
-			<input oninput="knurl()" id="angle" type="number"></input>
-			<span>degrees</span>
-		<p>Maximum Diameter:<span class="note">(maximum allowable journal diameter)</span></p>
-			<input oninput="knurl()" id="max_dia" type="number"></input>
-			<span>inches</span>
-	</div>
-	<div class="field">
-		<h3>Output</h3>
-		<p>Blanking Diameter:<span class="note">(turn blank to this diameter)</span></p>
-			<input readonly id="blank"></input>
-			<span>inches</span>
-		<p>Number of Teeth:<span class="note">(resulting serrations on workpiece)</span></p>
-			<input readonly id="teeth"></input>
-	</div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <!-- PAGE CONTENT -->
+    <div class="field">
+        <h3>Input</h3><span class="note">Single lead ACME threads only...</span>
+        <p id="labelBasicMajor">Basic Major Diameter:</p>
+        <input id="inputBasic" type="number"></input>
+        <span>inches</span>
+        <p id="labelTPI">Threads Per Inch:</p>
+        <input id="inputTPI" type="number"></input>
+        <span>TPI</span>
+        <p id="labelClass">Class:</p>
+		<select id="inputClass" style="width: 3.5em">
+			<option value="2">G2</option>
+			<option value="3">G3</option>
+            <option value="4">G4</option>
+		</select>
+        <p><button style="margin-top: 20px; margin-bottom: 10px" onclick="AcmeThreadData()">Calculate</button></p>
+    </div>
+    <div class="field">
+        <h3>Output</h3>
+        <p>Acme Thread Data:</p>
+        <textarea readonly id="result"></textarea>
+    </div>
 </body>
 </html>
