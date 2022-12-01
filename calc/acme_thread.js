@@ -40,11 +40,22 @@ function Tolerance (G, D, P) {
     return di + pi;
 }
 
+function ExtMinorMaxCalc(k, p) {
+    var EMMT;
+    if (p<=10) {
+        EMMT = k-0.02; 
+    } 
+    if (p>10) {
+        EMMT = k-0.01
+    }
+    return EMMT;
+}
+
 function intMajorCalc(D, P) {
-    if (P > 0.1) {
+    if (P >= 0.1) {
         D += 0.02;
     }
-    if (P <= 0.1) {
+    if (P < 0.1) {
         D += 0.01
     }
     return D;
@@ -58,20 +69,26 @@ function intMinorCalc (D, P) {
     return D += Alw;
 }
 
-function wireClosest (min, best, max, sizes) {
-    var current = sizes[0];
-    for (var i=1; i<sizes.length; i++) {
-        if (Math.abs(best-sizes[i]) < Math.abs(best-current)) {
-            current = sizes[i];
-            if (current < min) {
-                current = sizes[i+1];
-            } else if (current > max) {
-                current = sizes[i-1];
-            }
+function wireClosest(min, best, max, sizes) {
+    var closest;
+    if (max >= sizes[0] && max <= sizes[sizes.length-1]){
+      for (var i = 0; i<sizes.length-1; i++) {
+        if (sizes[i]>=min && sizes[i]<=best) {
+          closest = sizes[i];
+          break;
         }
+        if (sizes[i]>best && sizes[i]<=max) {
+          closest = sizes[i];
+          break;
+        }
+      }
+  
     }
-    return current;
-} 
+    else {
+      closest = best;
+    }
+    return closest;
+  }
 
 function AcmeThreadData () {
 
@@ -91,7 +108,7 @@ function AcmeThreadData () {
     const extMajorDiaMin = basicMajorDia-ExtMajorMinAlw(pitch);
     const extPitchDiaMax = basicPitchDia-Allowance(gClass, basicMajorDia);
     const extPitchDiaMin = extPitchDiaMax-Tolerance(gClass, basicMajorDia, pitch);
-    const extMinorDiaMax = basicMinorDia;
+    const extMinorDiaMax = ExtMinorMaxCalc(basicMinorDia, TPI);
     const extMinorDiaMin = extMinorDiaMax-(1.5*Tolerance(gClass, basicMajorDia, pitch));
 
     // Internal Thread Data
@@ -107,9 +124,6 @@ function AcmeThreadData () {
     const wireMin = 0.487263*pitch;
     const wireBest = 0.51645*pitch;
     const wireMax = 0.650013*pitch;
-    if (wireBest > wireSizes[wireSizes.length-1]) {
-        throw 'Error: Wire size not available';
-    }
     const wireSelect = wireClosest(wireMin, wireBest, wireMax, wireSizes);
     const halfPitch = pitch/2;
     const halfAngle = toRadians(29/2);
@@ -119,13 +133,13 @@ function AcmeThreadData () {
     const minMOW = extPitchDiaMin-deltaMOW;
 
     // Post Data to Output
-    var result = 'ACME ' + basicMajorDia + '" - ' + TPI + ' - ' + gClass + 'G'
+    var result = basicMajorDia + '"-' + TPI + ' ACME ' + gClass + 'G'
     + '\n'
     + '\n ----- Basic Thread Data -----'
     + '\n Basic Major Diameter: ' + fix(basicMajorDia, 4)
     + '\n Basic Pitch Diameter: ' + fix(basicPitchDia, 4)
     + '\n Basic Minor Diameter: ' + fix(basicMinorDia, 4)
-    + '\n TPI: ' + TPI + '  -->  Pitch: ' + pitch
+    + '\n TPI: ' + TPI + '  -->  Pitch: ' + fix(pitch, 4).toString()
     + '\n Class: ' + gClass.toString() + 'G'
     + '\n'
     + '\n ----- External Thread Data -----'
@@ -145,7 +159,7 @@ function AcmeThreadData () {
     + '\n Major Diameter Max.: ' + fix(intMajorDiaMax, 4)
     + '\n'
     + '\n ----- External Over Wires -----'
-    + '\n Wire Size: ' + wireSelect
+    + '\n Wire Size: ' + fix(wireSelect, 4)
     + '\n Ext. Basic PDOW: ' + fix(basicMOW, 4)
     + '\n Ext. Max PDOW: ' + fix(maxMOW, 4)
     + '\n Ext. Min. PDOW: '+ fix(minMOW, 4)
