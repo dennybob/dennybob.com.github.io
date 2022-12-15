@@ -88,3 +88,23 @@ a.button-container:hover {
   text-decoration: underline;
   text-decoration-color: red;
 }
+
+@media print {
+  nav,
+  button,
+  h3,
+  div:not(.to-print),
+  p:not(.to-print) {
+      display: none;
+  }
+  textarea {
+    font-family: "Consonlas", monospace;
+    font-size: 0.85em;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+  body, .field {
+    background-color: transparent;
+  }
+}

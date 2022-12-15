@@ -73,11 +73,11 @@
 		</select>
         <p><button style="margin-top: 20px; margin-bottom: 10px" onclick="AcmeThreadData()">Calculate</button></p>
     </div>
-    <div class="field">
+    <div class="field to-print">
         <h3>Output</h3>
         <p>Acme Thread Data:</p>
-        <textarea readonly id="result"></textarea>
-        
+        <p class="to-print"><textarea readonly id="result"></textarea></p>
+        <p><button onclick="window.print();">Print</button></p>
     </div>
 </body>
 </html>
