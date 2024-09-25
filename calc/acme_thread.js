@@ -69,6 +69,7 @@ function intMinorCalc (D, P) {
     return D += Alw;
 }
 
+/*
 function wireClosest(min, best, max, sizes) {
     var closest;
     if (max >= sizes[0] && max <= sizes[sizes.length-1]){
@@ -88,7 +89,8 @@ function wireClosest(min, best, max, sizes) {
       closest = best;
     }
     return closest;
-  }
+}
+*/
 
 function AcmeThreadData () {
 
@@ -120,17 +122,26 @@ function AcmeThreadData () {
     const intMinorDiaMax = intMinorCalc(basicMinorDia, pitch);
 
     // External Measurement Over Wires Data
+    /*
     const wireSizes = [0.018, 0.024, 0.029, 0.032, 0.04, 0.045, 0.055, 0.063, 0.072, 0.081, 0.092, 0.108, 0.12, 0.125, 0.127, 0.143, 0.185, 0.1875, 0.25];
     const wireMin = 0.487263*pitch;
     const wireBest = 0.51645*pitch;
     const wireMax = 0.650013*pitch;
     const wireSelect = wireClosest(wireMin, wireBest, wireMax, wireSizes);
-    const halfPitch = pitch/2;
-    const halfAngle = toRadians(29/2);
-    const deltaMOW = halfPitch*(1/Math.tan(halfAngle)+wireSelect*(1+1/Math.sin(halfAngle)))
-    const basicMOW = basicPitchDia-deltaMOW;
-    const maxMOW = extPitchDiaMax-deltaMOW;
-    const minMOW = extPitchDiaMin-deltaMOW;
+    const halfAngle = toRadians(29/2); //halfAngle
+    //const a = halfAngle;
+    //const halfPitch = pitch/2;
+    var l1 = Math.atan(pitch/(basicPitchDia*Math.PI));
+    var l2 = 1/Math.sin(l1);
+    var l3 = wireSelect*(1+l2);
+    var l4 = -1*(pitch/2)*(Math.cos(halfAngle)/Math.sin(halfAngle));
+    const deltaMOW = l4 + l3;
+    //const deltaMOW = (-1*(pitch/2)*(Math.cos(a)/Math.sin(a)))+(wireSelect*(1+(1/Math.sin(Math.atan(P/(basicPitchDia*Math.PI))))));
+    //const deltaMOW = halfPitch*(1/Math.tan(halfAngle)+wireSelect*(1+1/Math.sin(halfAngle)));
+    const basicMOW = basicPitchDia+deltaMOW;
+    const maxMOW = extPitchDiaMax+deltaMOW;
+    const minMOW = extPitchDiaMin+deltaMOW;
+    */
 
     // Post Data to Output
     var result = basicMajorDia + '"-' + TPI + ' ACME ' + gClass + 'G'
@@ -157,12 +168,12 @@ function AcmeThreadData () {
     + '\n Pitch Diameter Max.: ' + fix(intPitchDiaMax, 4)
     + '\n Major Diameter Min.: ' + fix(intMajorDiaMin, 4)
     + '\n Major Diameter Max.: ' + fix(intMajorDiaMax, 4)
-    + '\n'
-    + '\n ----- External Over Wires -----'
-    + '\n Wire Size: ' + fix(wireSelect, 4)
-    + '\n Ext. Basic PDOW: ' + fix(basicMOW, 4)
-    + '\n Ext. Max PDOW: ' + fix(maxMOW, 4)
-    + '\n Ext. Min. PDOW: '+ fix(minMOW, 4)
+    //+ '\n'
+    //+ '\n ----- External Over Wires -----'
+    //+ '\n Wire Size: ' + fix(wireSelect, 4)
+    //+ '\n Ext. Basic PDOW: ' + fix(basicMOW, 4)
+    //+ '\n Ext. Max PDOW: ' + fix(maxMOW, 4)
+    //+ '\n Ext. Min. PDOW: '+ fix(minMOW, 4)
     + '\n' ;
     document.getElementById("result").rows = 31;
     document.getElementById("result").value = result;
