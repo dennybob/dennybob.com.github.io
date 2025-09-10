@@ -31,7 +31,9 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<!-- LOCAL SCRIPTS/STYLESHEETS -->
+	<!-- MATHJAX.ORG V3 TEX INPUT ONLY CDN -->
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <!-- LOCAL SCRIPTS/STYLESHEETS -->
     <link rel="stylesheet" href="../main.css" />
     <script src="common.js"></script>
     <script src="line_length.js"></script>
@@ -74,5 +76,24 @@
         <input readonly id="inputLength"></input>
         <span>inches</span>
     </div>
+    	<div class="field">
+		<h3>Formula</h3>
+			<p>Line Length:
+				<ul style="list-style-type:none;">
+					<li>\( L =  {\sqrt{ (x_2-x_1)^2 + (y_2-y_1)^2 + (y_2-y_1)^2 } } \)</li>
+				</ul>
+			</p>
+			<p>Where:
+				<ul style="list-style-type:none;">
+                    <li>\(L=\) Line Length</li>
+                    <li>\(x_1=\) X coordinate of Point-1</li>  
+                    <li>\(y_1=\) Y coordinate of Point-1</li>
+                    <li>\(z_1=\) Z coordinate of Point-1</li>
+                    <li>\(x_2=\) X coordinate of Point-2</li>
+                    <li>\(y_2=\) Y coordinate of Point-2</li>
+                    <li>\(z_2=\) Z coordinate of Point-2</li> 
+				</ul>
+			</p> 
+	</div>
 </body>
 </html>
