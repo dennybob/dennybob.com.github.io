@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <!-- METADATA -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculators">
+    <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <!-- PAGE TITLE -->
+    <title>5-Axis Rotation | dennybob.com</title>
+    <!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+	<link rel="manifest" href="../favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- BOOTSTRAP FROM CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- LOCAL SCRIPTS/STYLESHEETS -->
+    <link rel="stylesheet" href="../main.css" />
+    <script src="common.js"></script>
+    <script src="5axis_rot.js"></script>
+    <!-- GOOGLE ANALYITICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
+    <script src="../analytics.js"></script>
+</head>
+<body>
+	<!-- BOOTSTRAP NAVBAR -->
+	<nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand mb-0 h1" href="https://dennybob.com">DennyBob</a>
+            <a class="navbar-brand" href="javascript:location.reload();">5-Axis Rotation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../calc/5axis_rot.html">Clear All</a>
+                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <!-- PAGE CONTENT -->
+    <div class="field">
+        <h3>Input</h3>
+        <p>Center of Rotation</p>
+            <p>X:<input oninput="calc()" id="input-cor-x" type="number"></input></p>
+            <p>Y:<input oninput="calc()" id="input-cor-y" type="number"></input></p>
+            <p>Z:<input oninput="calc()" id="input-cor-z" type="number"></input></p>
+            <p>Original Work Offset</p>
+            <p>X:<input oninput="calc()" id="input-wo-x" type="number"></input></p>
+            <p>Y:<input oninput="calc()" id="input-wo-y" type="number"></input></p>
+            <p>Z:<input oninput="calc()" id="input-wo-z" type="number"></input></p>
+        <p>Rotation Angles</p>
+            <p>A:<input oninput="calc()" id="input-angle-a" type="number"></input></p>
+            <p>B:<input oninput="calc()" id="input-angle-b" type="number"></input></p>
+    </div>
+    <div class="field">
+        <h3>Output</h3>
+        <p>New Work Offset:</p>
+            <p>X:<input readonly id="output-wo-x" type="number"></input></p>
+            <p>Y:<input readonly id="output-wo-y" type="number"></input></p>
+            <p>Z:<input readonly id="output-wo-z" type="number"></input></p>
+    </div>
+</body>
+</html>
