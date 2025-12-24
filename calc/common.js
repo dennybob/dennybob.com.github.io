@@ -1,7 +1,10 @@
 // COMMON CALCULATOR FUNCTIONS
 
 //----------------------------------------------------------------------
-// Fixes input to given unit
+// Rounds and fixes input to given unit
+//    Note: The fix(n,p) function rounds input per standard rules,
+//          preserves 'Number' type for further calculations, and
+//          prevents floating point precision errors in JS.
 //----------------------------------------------------------------------
 function fix(fNumber,fPlace){
 	var fDecimal = Math.pow(10,fPlace);
