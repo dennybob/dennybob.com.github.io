@@ -7,7 +7,7 @@
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Material Weight | dennybob.com</title>
+	<title>Knurl Blank | dennybob.com</title>
     <!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -33,8 +33,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
-	<script src="common.js"></script>
-	<script src="material_weight.js"></script>
+	<script src="../scripts/common.js"></script>
+	<script src="../scripts/knurl_blank.js"></script>
 	<!-- GOOGLE ANALYITICS -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
     <script src="../analytics.js"></script>
@@ -43,7 +43,7 @@
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
 			<a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Material Weight</a>
+			<a class="navbar-brand" href="javascript:location.reload();">Knurl Blank</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -60,37 +60,23 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
-		<p id="labelShape">Solid Shape:</p>
-		<select id="selectShape" onchange="volumeWeight()">
-			<option value="rectangle">Rectangle</option>
-			<option value="square">Square</option>
-			<option value="round">Round (shaft)</option>
-		</select>
-		<p id="labelWidth">Width:</p>
-			<input oninput="volumeWeight()" id="inputWidth" type="number"></input>
-			<span id="unitWidth">inches</span>
-		<p id="labelHeight">Height:</p>
-			<input oninput="volumeWeight()" id="inputHeight" type="number"></input>
-			<span id="unitHeight">inches</span>
-		<p id="labelLength">Length:</p>
-			<input oninput="volumeWeight()" id="inputLength" type="number"></input>
-			<span id="unitLength">inches</span>
-		<p>Material Type:</p>
-		<select id="selectMaterial" onchange="volumeWeight()">
-			<option value="steel">Steel</option>
-			<option value="aluminum">Aluminum</option>
-			<option value="titanium">Titanium</option>
-			<option value="brass">Brass</option>
-		</select>
+		<p>Pitch:<span class="note">(pitch of teeth on knurling wheel)</span></p>
+			<input oninput="knurl()" id="tpi" type="number"></input>
+			<span>TPI</span>
+		<p>Angle:<span class="note">(diamond=30, straight=0 )</span></p>
+			<input oninput="knurl()" id="angle" type="number"></input>
+			<span>degrees</span>
+		<p>Maximum Diameter:<span class="note">(maximum allowable journal diameter)</span></p>
+			<input oninput="knurl()" id="max_dia" type="number"></input>
+			<span>inches</span>
 	</div>
 	<div class="field">
 		<h3>Output</h3>
-		<p>Volume:</p>
-			<input readonly id="inputVolume"></input>
-			<span>cubic inches</span>
-		<p>Weight:</p>
-			<input readonly id="inputWeight"></input>
-			<span>pounds</span>
+		<p>Blanking Diameter:<span class="note">(turn blank to this diameter)</span></p>
+			<input readonly id="blank"></input>
+			<span>inches</span>
+		<p>Number of Teeth:<span class="note">(resulting serrations on workpiece)</span></p>
+			<input readonly id="teeth"></input>
 	</div>
 </body>
 </html>

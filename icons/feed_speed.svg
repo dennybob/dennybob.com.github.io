@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="feed_speed" viewBox="-50 -50 100 100">
+	<circle cx="10" cy="0" r="2" fill="white"/>
+	<path d="M 30,0 A 20 20 0 0 0 7.5,-17" fill="none" stroke="white" />
+	<path d="M 30,0 A 20 20 0 0 0 7.5,-17" fill="none" stroke="white" transform="rotate(90,10,0)" />
+	<path d="M 30,0 A 20 20 0 0 0 7.5,-17" fill="none" stroke="white" transform="rotate(180,10,0)" />
+	<path d="M 30,0 A 20 20 0 0 0 7.5,-17" fill="none" stroke="white" transform="rotate(270,10,0)" />
+	<path d="M 10,0 q 12,-8 20,0" fill="none" stroke="white" transform="rotate(0,10,0)" />
+	<path d="M 10,0 q 12,-8 20,0" fill="none" stroke="white" transform="rotate(90,10,0)" />
+	<path d="M 10,0 q 12,-8 20,0" fill="none" stroke="white" transform="rotate(180,10,0)" />
+	<path d="M 10,0 q 12,-8 20,0" fill="none" stroke="white" transform="rotate(270,10,0)" />
+	<line x1="-30" y1="0" x2="-15" y2="0" stroke="white" />
+	<path d="M -35,0 l 5,2 l 0,-4 l -5,2" fill="white" stroke="white" stroke-linecap="round" />
+	<path d="M 35.98,-15 A 30 30 0 0 1 40,0" fill="none" stroke="white" />
+	<path d="M 35.98,-15 A 30 30 0 0 1 40,0" fill="none" stroke="white" transform="rotate(90,10,0)" />
+	<path d="M 35.98,-15 A 30 30 0 0 1 40,0" fill="none" stroke="white" transform="rotate(-90,10,0)" />
+	<path d="M 40,5 l 2,-5 l -4,0 l 2,5" fill="white" stroke="white" stroke-linecap="round" />
+	<path d="M 40,5 l 2,-5 l -4,0 l 2,5" fill="white" stroke="white" stroke-linecap="round" transform="rotate(90,10,0)" />
+	<path d="M 40,5 l 2,-5 l -4,0 l 2,5" fill="white" stroke="white" stroke-linecap="round" transform="rotate(-90,10,0)" />
+</svg>

@@ -7,7 +7,7 @@
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Arc Feed | dennybob.com</title>
+	<title>Drill Tip | dennybob.com</title>
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -35,8 +35,8 @@
 	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
-	<script src="common.js"></script>
-	<script src="arc_feed.js"></script>
+	<script src="../scripts/common.js"></script>
+	<script src="../scripts/drill_tip.js"></script>
 	<!-- GOOGLE ANALYITICS -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
     <script src="../analytics.js"></script>
@@ -44,8 +44,8 @@
 <body>
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mb-0 h1" href="..index.html">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Arc Feed</a>
+			<a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
+			<a class="navbar-brand" href="javascript:location.reload();">Drill Tip</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -62,39 +62,40 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
-		<p id="labelOpType">Operation Type:</p>
-		<select id="selectOpType" onchange="circFeed()">
-			<option value="internal" selected="selected">Internal (bore)</option>
-			<option value="external">External (boss)</option>
+		<p id="labelAngle">Included Angle:</p>
+		<select id="selectAngle" onchange="tipLength()">
+			<option value="60.0">60 Deg.</option>
+			<option value="82.0">82 Deg.</option>
+			<option value="90.0">90 Deg.</option>
+			<option value="118.0" selected="selected">118 Deg.</option>
+			<option value="132.0">132 Deg.</option>
+			<option value="135.0">135 Deg.</option>
+			<option value="144.0">144 Deg.</option>
 		</select>
-		<p id="labelWorkDiameter">Workpiece Diameter:</p>
-			<input oninput="circFeed()" id="inputWorkDiameter" type="number"></input>
+		<p id="labelDiameter">Drill Diameter:</p>
+			<input oninput="tipLength()" id="inputDiameter" type="number"></input>
 			<span id="unitDiameter">inches</span>
-		<p id="labelToolDiameter">Tool Diameter:</p>
-			<input oninput="circFeed()" id="inputToolDiameter" type="number"></input>
-			<span id="unitDiameter">inches</span>
-		<p id="labelLinearFeedrate">Linear Feedrate:</p>
-			<input oninput="circFeed()" id="inputLinearFeed" type="number"></input>
-			<span id="unitDiameter">IPM</span>
 	</div>
 	<div class="field">
 		<h3>Output</h3>
-		<p>Interp. Feedrate:</p>
-			<input readonly id="circFeed"></input>
-			<span>IPM</span>
+		<p>Length:</p>
+			<input readonly id="inputLength"></input>
+			<span>inches</span>
 	</div>
-	<div class="field">
-		<h3>Formulas</h3>
-			<p>Internal (bore):<ul>\( F = {f (D - d) \over D} \)</ul></p>
-			<p>External (boss):<ul>\( F = {f (D + d) \over D} \)</ul></p>
+		<div class="field">
+		<h3>Formula</h3>
+			<p>Drill Tip Length:
+				<ul style="list-style-type:none;">
+					<li>\( L = \frac {\frac{d}{2}} {\tan\left(\frac{\theta}{2}\right)} \)</li>
+				</ul>
+			</p>
 			<p>Where:
 				<ul style="list-style-type:none;">
-					<li>\(F=\) Interp. Feedrate</li>
-					<li>\(f=\) Linear Feedrate</li>
-					<li>\(D=\) Workpiece Diameter</li>
-					<li>\(d=\) Tool Diameter</li>
+					<li>\(L=\) Drill Tip Length (inches)</li>
+					<li>\(d=\) Drill Diameter (inches)</li>
+					<li>\(\theta=\) Included Angle (degrees)</li>
 				</ul>
-			</p> 
+			</p>
 	</div>
 </body>
 </html>

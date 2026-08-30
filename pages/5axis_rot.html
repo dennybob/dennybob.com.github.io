@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-  	<!-- METADATA -->
+    <!-- METADATA -->
     <meta charset="UTF-8">
-	<meta name="description" content="Calculators">
+    <meta name="description" content="Calculators">
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
-	<!-- PAGE TITLE -->
-    <title>Descending Peck | dennybob.com</title>
+    <!-- PAGE TITLE -->
+    <title>5-Axis Rotation | dennybob.com</title>
     <!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -31,10 +31,10 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!-- LOCAL SCRIPTS/STYLESHEETS -->
+	<!-- LOCAL SCRIPTS/STYLESHEETS -->
     <link rel="stylesheet" href="../main.css" />
-    <script src="common.js"></script>
-    <script src="descending_peck.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/5axis_rot.js"></script>
     <!-- GOOGLE ANALYITICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
     <script src="../analytics.js"></script>
@@ -43,7 +43,7 @@
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
-            <a class="navbar-brand" href="javascript:location.reload();">Descending Peck</a>
+            <a class="navbar-brand" href="javascript:location.reload();">5-Axis Rotation</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,23 +60,24 @@
     <!-- PAGE CONTENT -->
     <div class="field">
         <h3>Input</h3>
-        <p>Retract Height:</p>
-        <input oninput="peck()" id="dp_r" type="number" step="0.0001" placeholder="0.1"></input><span>ABS</span>
-        <p>Final Depth:</p>
-        <input oninput="peck()" id="dp_z" type="number" step="0.0001" placeholder="-2.5"></input><span>ABS</span>
-        <p>Initial Peck:</p>
-        <input oninput="peck()" id="dp_i" type="number" step="0.0001" placeholder="0.35"></input><span>INC</span>
-        <p>Peck Decrement:</p>
-        <input oninput="peck()" id="dp_j" type="number" step="0.0001" placeholder="0.05"></input><span>INC</span>
-        <p>Minimum Peck:</p>
-        <input oninput="peck()" id="dp_k" type="number" step="0.0001" placeholder="0.1"></input><span>INC</span>
+        <p>Center of Rotation</p>
+            <p>X:<input oninput="calc()" id="input-cor-x" type="number"></input></p>
+            <p>Y:<input oninput="calc()" id="input-cor-y" type="number"></input></p>
+            <p>Z:<input oninput="calc()" id="input-cor-z" type="number"></input></p>
+            <p>Original Work Offset</p>
+            <p>X:<input oninput="calc()" id="input-wo-x" type="number"></input></p>
+            <p>Y:<input oninput="calc()" id="input-wo-y" type="number"></input></p>
+            <p>Z:<input oninput="calc()" id="input-wo-z" type="number"></input></p>
+        <p>Rotation Angles</p>
+            <p>A:<input oninput="calc()" id="input-angle-a" type="number"></input></p>
+            <p>B:<input oninput="calc()" id="input-angle-b" type="number"></input></p>
     </div>
     <div class="field">
         <h3>Output</h3>
-        <p>Code:<span class="note"> Haas</span></p>
-        <textarea readonly id="code"></textarea>
-        <p>Peck Data:</p>
-        <textarea readonly id="pecks"></textarea>
+        <p>New Work Offset:</p>
+            <p>X:<input readonly id="output-wo-x" type="number"></input></p>
+            <p>Y:<input readonly id="output-wo-y" type="number"></input></p>
+            <p>Z:<input readonly id="output-wo-z" type="number"></input></p>
     </div>
 </body>
 </html>

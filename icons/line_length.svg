@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="line_length" viewBox="-50 -50 100 100">
+	<line x1="0" y1="0" x2="0" y2="-40" stroke="white" />
+	<path d="M 0,-45 l -2,5 l 4,0 l -2,-5" fill="white" stroke="white" stroke-linecap="round" />
+	<path d="M 0,-45 l -2,5 l 4,0 l -2,-5" fill="white" stroke="white" stroke-linecap="round" transform="rotate(100,0,0)" />
+	<path d="M 0,-45 l -2,5 l 4,0 l -2,-5" fill="white" stroke="white" stroke-linecap="round" transform="rotate(-135,0,0)" />
+	<line x1="0" y1="0" x2="39.39" y2="6.95" stroke="white" />
+	<line x1="0" y1="0" x2="-28.28" y2="28.28" stroke="white" />
+	<circle cx="-25" cy="-18" r="2" fill="white"/>
+	<circle cx="22" cy="24" r="2" fill="white"/>
+	<line x1="-25" y1="-18" x2="22" y2="24" stroke="white" stroke-dasharray="3 3" stroke-dashoffset="1.5" />
+</svg>

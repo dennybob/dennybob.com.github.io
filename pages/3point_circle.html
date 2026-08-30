@@ -1,13 +1,13 @@
 ﻿<!doctype html>
 <html>
 <head>
-	<!-- METADATA -->
-	<meta charset="UTF-8">
-	<meta name="description" content="Calculators">
+    <!-- METADATA -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculators">
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
-	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
-	<!-- PAGE TITLE -->
-	<title>Chord Height | dennybob.com</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+    <!-- PAGE TITLE -->
+    <title>3-Point Circle | dennybob.com</title>
     <!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -31,64 +31,50 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<!-- MATHJAX.ORG V3 TEX INPUT ONLY CDN -->
-	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
-	<link rel="stylesheet" href="../main.css" />
-	<script src="common.js"></script>
-	<script src="chord_height.js"></script>
-	<!-- GOOGLE ANALYITICS -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
+    <link rel="stylesheet" href="../main.css" />
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/3point_circle.js"></script>
+    <!-- GOOGLE ANALYITICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
     <script src="../analytics.js"></script>
 </head>
 <body>
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Chord Height</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
+            <a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
+            <a class="navbar-brand" href="javascript:location.reload();">3-Point Circle</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="javascript:location.reload();">Clear All</a>
                         <a class="nav-link" href="../index.html">Home</a>
                         <a class="nav-link" href="../about.html">About</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	<!-- PAGE CONTENT -->
-	<div class="field">
-		<h3>Input</h3>
-		<p id="labelDiameter">Diameter:</p>
-			<input oninput="chordHeight()" id="inputDiameter" type="number"></input>
-			<span>inches</span>
-		<p id="labelHeight">Chord Width:</p>
-			<input oninput="chordHeight()" id="inputWidth" type="number"></input>
-			<span>inches</span>
-	</div>
-	<div class="field">
-		<h3>Output</h3>
-		<p>Chord Height:</p>
-			<input readonly id="inputHeight"></input>
-			<span>inches</span>
-	</div>
-	<div class="field">
-		<h3>Formula</h3>
-			<p>Chord Height:
-				<ul style="list-style-type:none;">
-					<li>\( H =  {d - \sqrt{d^2 - c^2} \over 2} \)</li>
-				</ul>
-			</p>
-			<p>Where:
-				<ul style="list-style-type:none;">
-					<li>\(H=\) Chord Height</li>
-					<li>\(d=\) Diameter</li>
-					<li>\(c=\) Chord Width</li>
-				</ul>
-			</p> 
-	</div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <!-- PAGE CONTENT -->
+    <div class="field">
+        <h3>Input Point-1</h3><span></span>
+            <p>X<sub>1</sub>:<input oninput="findcenter()" id="x1" type="number"></input><span></span></p>
+            <p>Y<sub>1</sub>:<input oninput="findcenter()" id="y1" type="number"></input><span></span></p>
+        <h3>Input Point-2</h3><span></span>
+            <p>X<sub>2</sub>:<input oninput="findcenter()" id="x2" type="number"></input><span></span></p>
+            <p>Y<sub>2</sub>:<input oninput="findcenter()" id="y2" type="number"></input><span></span></p>
+        <h3>Input Point-3</h3><span></span>
+            <p>X<sub>3</sub>:<input oninput="findcenter()" id="x3" type="number"></input><span></span></p>
+            <p>Y<sub>3</sub>:<input oninput="findcenter()" id="y3" type="number"></input><span></span></p>
+    </div>
+    <div class="field">
+        <h3>Output</h3>
+        <p>Center:<span class="note">(x,y)</span></p>
+        <input readonly id="inputCenter" />
+        <p>Radius:</p>
+        <input readonly id="inputRadius" />
+    </div>
 </body>
 </html>

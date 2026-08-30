@@ -7,8 +7,8 @@
     <meta name="keywords" content="DennyBob, Machining, Calculators, Math">
 	<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no" />
 	<!-- PAGE TITLE -->
-	<title>Helix Length | dennybob.com</title>
-    <!-- ICONS -->
+	<title>Arc Feed | dennybob.com</title>
+	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
@@ -31,10 +31,12 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- MATHJAX.ORG V3 TEX INPUT ONLY CDN -->
+	<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 	<!-- LOCAL SCRIPTS/STYLESHEETS -->
 	<link rel="stylesheet" href="../main.css" />
-	<script src="common.js"></script>
-	<script src="helix_length.js"></script>
+	<script src="../scripts/common.js"></script>
+	<script src="../scripts/arc_feed.js"></script>
 	<!-- GOOGLE ANALYITICS -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R544F31V5P"></script>
     <script src="../analytics.js"></script>
@@ -42,8 +44,8 @@
 <body>
 	<!-- BOOTSTRAP NAVBAR -->
 	<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mb-0 h1" href="../index.html">DennyBob</a>
-			<a class="navbar-brand" href="javascript:location.reload();">Helix Length</a>
+			<a class="navbar-brand mb-0 h1" href="..index.html">DennyBob</a>
+			<a class="navbar-brand" href="javascript:location.reload();">Arc Feed</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -60,21 +62,39 @@
 	<!-- PAGE CONTENT -->
 	<div class="field">
 		<h3>Input</h3>
-		<p>Radius:<span class="note">(distance from center of rotation)</span></p>
-			<input oninput="helixLength()" id="inputRadius" type="number"></input>
-			<span>inches</span>
-		<p>Height:<span class="note">(length in linear axis)</span></p>
-			<input oninput="helixLength()" id="inputHeight" type="number"></input>
-			<span>inches</span>
-		<p>Turns:<span class="note">(degrees of rotation / 360)</span></p>
-			<input oninput="helixLength()" id="inputTurns" type="number"></input>
-			<span>inches</span>
+		<p id="labelOpType">Operation Type:</p>
+		<select id="selectOpType" onchange="circFeed()">
+			<option value="internal" selected="selected">Internal (bore)</option>
+			<option value="external">External (boss)</option>
+		</select>
+		<p id="labelWorkDiameter">Workpiece Diameter:</p>
+			<input oninput="circFeed()" id="inputWorkDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+		<p id="labelToolDiameter">Tool Diameter:</p>
+			<input oninput="circFeed()" id="inputToolDiameter" type="number"></input>
+			<span id="unitDiameter">inches</span>
+		<p id="labelLinearFeedrate">Linear Feedrate:</p>
+			<input oninput="circFeed()" id="inputLinearFeed" type="number"></input>
+			<span id="unitDiameter">IPM</span>
 	</div>
 	<div class="field">
 		<h3>Output</h3>
-		<p>Helix Length:<span class="note">(3d arc length)</span></p>
-			<input readonly id="inputLength"></input>
-			<span>inches</span>
+		<p>Interp. Feedrate:</p>
+			<input readonly id="circFeed"></input>
+			<span>IPM</span>
+	</div>
+	<div class="field">
+		<h3>Formulas</h3>
+			<p>Internal (bore):<ul>\( F = {f (D - d) \over D} \)</ul></p>
+			<p>External (boss):<ul>\( F = {f (D + d) \over D} \)</ul></p>
+			<p>Where:
+				<ul style="list-style-type:none;">
+					<li>\(F=\) Interp. Feedrate</li>
+					<li>\(f=\) Linear Feedrate</li>
+					<li>\(D=\) Workpiece Diameter</li>
+					<li>\(d=\) Tool Diameter</li>
+				</ul>
+			</p> 
 	</div>
 </body>
 </html>

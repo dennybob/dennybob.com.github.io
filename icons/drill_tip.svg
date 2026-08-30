@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="drill_tip" viewBox="-50 -50 100 100">
+	<line x1="-20" y1="-40" x2="-20" y2="30" stroke="white" />
+	<line x1="20" y1="-40" x2="20" y2="30" stroke="white" />
+	<line x1="0" y1="40" x2="20" y2="30" stroke="white" />
+	<line x1="0" y1="40" x2="-20" y2="30" stroke="white" />
+	<path d="M -20,-40 q 10,-5 20,0 t 20,0" fill="none" stroke="white"  />
+	<line x1="-20" y1="30" x2="20" y2="30" stroke="white" stroke-dasharray="3 3" stroke-dashoffset="3" />
+</svg>

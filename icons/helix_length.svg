@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="helix_length" viewBox="-50 -50 100 100">
+	<line x1="-40" y1="-20" x2="-40" y2="20" stroke="white" />
+	<line x1="40" y1="-20" x2="40" y2="20" stroke="white" />
+	<path d="M -40,-20 q 5,3 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0" fill="none" stroke="white" />
+	<path d="M -40,20 q 5,3 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0 t 10,0" fill="none" stroke="white" />
+	<line x1="-40" y1="-20" x2="-30" y2="20" stroke="white" />
+	<line x1="-30" y1="-20" x2="-20" y2="20" stroke="white" />
+	<line x1="-20" y1="-20" x2="-10" y2="20" stroke="white" />
+	<line x1="-10" y1="-20" x2="0" y2="20" stroke="white" />
+	<line x1="0" y1="-20" x2="10" y2="20" stroke="white" />
+	<line x1="10" y1="-20" x2="20" y2="20" stroke="white" />
+	<line x1="20" y1="-20" x2="30" y2="20" stroke="white" />
+	<line x1="30" y1="-20" x2="40" y2="20" stroke="white" />
+</svg>
