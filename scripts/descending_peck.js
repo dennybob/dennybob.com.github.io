@@ -4,7 +4,7 @@
 function isValidInput(r, z, i, j, k) {
     return (
         !isNaN(r) &&
-        !isNaN(r) &&
+        !isNaN(z) &&
         i >= 0.0001 &&
         j >= 0.0001 &&
         k >= 0.0001
@@ -36,14 +36,18 @@ function peck() {
 
         // Calculate & output actual pecks
         var pecks = [];
-        var current_depth = r;
-        var peck_depth = i;
+        var scale = 10000;
+        var current_depth = Math.round(r * scale);
+        var final_depth = Math.round(z * scale);
+        var peck_depth = Math.round(i * scale);
+        var decrement = Math.round(j * scale);
+        var minimum_peck = Math.round(k * scale);
         var peck_count = 0;
-        while (current_depth > z) {
+        while (current_depth > final_depth) {
             peck_count++;
             var next_depth = current_depth - peck_depth;
-            if (next_depth < z) {
-                next_depth = z;
+            if (next_depth < final_depth) {
+                next_depth = final_depth;
             }
             // compute actual depth-of-cut (DOC) for this peck (handles last/clamped peck correctly)
             var actual_doc = current_depth - next_depth;
@@ -52,13 +56,13 @@ function peck() {
             var prefix = "Peck " + peck_count + ":";
             var pad = " ".repeat(2);
             var line1 = prefix;
-            var line2 = pad + "from Z" + fix(current_depth,4);
-            var line3 = pad + "to Z" + fix(next_depth,4);
-            var line4 = pad + "DOC " + fix(actual_doc,4);
+            var line2 = pad + "from Z" + fix(current_depth / scale,4);
+            var line3 = pad + "to Z" + fix(next_depth / scale,4);
+            var line4 = pad + "DOC " + fix(actual_doc / scale,4);
             pecks.push(line1 + "\n" + line2 + "\n" + line3 + "\n" + line4);
 
             current_depth = next_depth;
-            peck_depth = Math.max(peck_depth - j, k);
+            peck_depth = Math.max(peck_depth - decrement, minimum_peck);
             
         }
         document.getElementById("pecks").value = pecks.join('\n');
